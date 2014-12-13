@@ -1,0 +1,19 @@
+<h1>yearBook</h1>
+<p>Este é um álbum dos alunos da turma de Tópicos Especiais em Computação 2014/02.</p>
+
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<table class="table table-striped">
+  <tbody>
+ 
+<% @users.each do |user| %>
+     <tr> 
+       <td><%= link_to user.nome, user_path(user) %></td>
+       <td><%= image_tag  user.avatar(:thumb) %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>

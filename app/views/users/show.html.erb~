@@ -1,0 +1,25 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @user.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:login) %>:</strong></dt>
+  <dd><%= @user.login %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+  <dd><%= @user.nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar) %>:</strong></dt>
+  <%= image_tag @user.avatar.url(:thumb) %>
+<br/>
+  <dt><strong><%= model_class.human_attribute_name(:cidade) %>:</strong></dt>
+  <dd><%= @user.cidade %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:estado) %>:</strong></dt>
+  <dd><%= @user.estado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descricao_pessoal) %>:</strong></dt>
+  <dd><%= @user.descricao_pessoal %></dd>
+</dl>
+
+<%= link_to "Voltar", :back, class: 'btn btn-primary'  %>
+

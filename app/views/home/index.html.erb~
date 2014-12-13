@@ -1,0 +1,32 @@
+<dl class="dl-horizontal">
+<dt><strong><%=(:avatar) %>:</strong></dt>
+  <%= image_tag current_user.avatar.url(:thumb) %>
+<br/>
+  <dt><strong><%= (:email) %>:</strong></dt>
+  <dd><%= current_user.email %></dd>
+  <dt><strong><%= (:login) %>:</strong></dt>
+  <dd><%= current_user.login %></dd>
+  <dt><%=(:nome) %>:</strong></dt>
+  <dd><%= current_user.nome %></dd>
+  <dt><strong><%=(:descricao_pessoal) %>:</strong></dt>
+  <dd><%= current_user.descricao_pessoal %></dd>
+<dt><strong><%=(:cidade) %>:</strong></dt>
+  <dd><%= current_user.cidade %></dd>
+  <dt><strong><%=(:estado) %>:</strong></dt>
+  <dd><%= current_user.estado %></dd>
+</dl> 
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<table class="table table-striped">
+  <tbody>
+ 
+<% @users.each do |user| %>
+     <tr> 
+       <td><%= link_to user.nome, user_path(user) %></td>
+       <td><%= image_tag  user.avatar(:thumb) %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
